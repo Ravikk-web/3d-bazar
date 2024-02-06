@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>3D-BAZAR</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div class="pt-5"></div>
+  <div class="pt-5"></div>
+  <header>
+    <!-- place navbar here -->
+    <div>
+      {% for n in productData %}
+      <h1 align="center"><i>{{n.product_title}}</i></h1>
+      {% endfor %}
+    </div>
+    {% include "P_navbar.html" %}
+    <div class="p-2"></div>
+    <hr>
+  </header>
+  <main>
+
+      <div class="row p-2">
+        {% for n in productData %}
+        {% if n.product_image != NULL %}
+        <div class="col-8 align-content-center p-3">
+          <iframe style="height: 540px; width: 820px; margin-left: 8rem;"title="{{n.product_title}}" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="{{n.product_link}}"></iframe>
+        </div>
+
+        <div class="col-4 card-body">
+          <div class="card" style="width: rem;">
+            <h3 class="bg-dark text-white px-3">{{n.product_icon}}</h3>
+          </div>
+            <h5 class="card-title">{{n.product_title}}</h5>
+            <hr>
+            <p class="card-text">{{n.product_des | safe}}</p>
+            <hr>
+            <p class="card-text"><b>Price: </b><span class="bg-success rounded-2 text-white p-2">10000 RS.</span>&nbsp;&nbsp;<span class="bg-danger rounded-2 text-white p-2"><strike>12000 Rs.{{n.product_price | safe}}</strike></span></p>
+            <a href="/product_buy/{{n.product_icon}}/" class="btn btn-primary p-2 px-5" >BUY</a>
+        </div>
+
+        {% endif %}
+        
+        {% empty %}
+        <div class="conatiner-fluid text-center display-4">No Data Found !</div>
+        
+        {% endfor %}
+      </div>
+
+        
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

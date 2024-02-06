@@ -1,0 +1,118 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Sign Up </title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'login_css.css' %}">
+
+  <style>
+    .navbar-brand{
+      text-transform:uppercase;
+      font-size:1rem;
+      letter-spacing:.1rem;font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.1rem;
+      font-weight:700
+    }
+    .nav-item{
+      text-transform:uppercase;
+      font-size:.8rem;
+      font-weight:700;
+      letter-spacing:.1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <!-- place navbar here -->
+    {% include "./L_navbar.html" %}
+    <div class="p-5"></div>
+    <br>
+  </header>
+  <main>
+
+
+    <section class="position-relative py-4 py-xl-5">
+      <div class="container position-relative">
+          <div class="row mb-5">
+              <div class="col-md-8 col-xl-6 text-center mx-auto">
+                  <h2 class="display-5"><strong>Signup-Page</strong></h2>
+                  <p class="w-lg-50 display-6"><i style="color: red;">Create your account</i></p>
+                  {% if success %}
+                    <div class="alert alert-primary" role="alert">
+                      Sign-up Successfully : Redirecting...
+                    </div>
+                  {% endif %}
+              </div>
+          </div>
+
+          <div>
+            {% for message in messages %}
+          <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <strong>Message: {{ message }}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+          </button> 
+          </div>
+          {% endfor %}
+        </div>
+
+          <div class="row d-flex justify-content-center">
+              <div class="col-md-6 col-lg-5 col-xl-4 opback">
+                  <div>
+                    <form class="p-3 p-xl-4"  action="/signup/" method="post">
+                      {% csrf_token %}
+                      
+                      <div class="mb-3"><input class="form-control" type="text" name="username" placeholder="@Create a Username (only letters and numbers)" required></div>
+                      
+                      <div class="mb-3"><input class="form-control" type="text" name="fname" placeholder="@First Name" required></div>
+
+                      <div class="mb-3"><input class="form-control" type="text" name="lname" placeholder="@Last Name" required></div>
+
+                      <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="@Email address" required></div>
+
+                      <div class="mb-3"><input class="form-control" type="password" name="pass1" placeholder="@password" required></div>
+
+                      <div class="mb-3"><input class="form-control" type="password" name="pass2" placeholder="@Confirm-password" required></div>
+                      
+                      <div class="form-check mb-3">
+                          <input class="form-check-input" type="checkbox" id="myCheck" name="remember" required>
+                          <label class="form-check-label" for="myCheck">Check this to verify Your are a human.</label>
+                      </div>
+                      <div><button class="btn btn-primary d-block w-100" type="submit">Signup</button></div>
+                  </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  </main>
+  <footer>
+    <!-- place footer here -->
+    <footer class="footer mt-auto py-5 bg-black ">
+      <div class="container">
+          <p class="text-center text-white m-0 small">Copyright&nbsp;© 3D-BAZAR 2023</p>
+      </div>
+  </footer>
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

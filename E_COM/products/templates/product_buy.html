@@ -1,0 +1,69 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>3D-BAZAR</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .bg-col{
+            background-color: rgb(238, 238, 238);
+        }
+    </style>
+</head>
+
+<body>
+  <header>
+    {% include "P_navbar.html" %}
+  </header>
+  <main>
+    <div style="margin-top: 5rem;"></div>
+    <h1 align="center"> Pay For your Product: <u><span style="color: red;">{{productname}}</span></u></h1>
+    <hr>
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-6 bg-col">
+            <h3><span><b>Product Name: </b></span> <span> <i>{{productname}}</i></span></h3><br>
+            <h3><span><b>Product : </b></span> <span> <i>{{productname}}</i></span></h3><br>
+            <h3><span><b>Total Price (INR): </b></span> <span class="rounded-1 p-1" style=" background-color: rgb(150, 253, 150); font-style: italic;"> 3000 Rs. /-</span></h3><br>
+          </div>
+          <div class="col bg-col">
+            <h3><i>Please scan the QR code to pay...</i></h3>
+            <p>The Product will be deliver to your mail within 1-2 minutes.</p>
+
+            <div>
+                <div class="card mb-3 text-center">
+                    <img src="{% static 'my_qr.png' %}" class="card-img-top img-fluid rounded mx-auto d-block" alt="..." style="width: 320px; height: 320px;">
+                    <div class="card-body">
+                      <h5 class="card-title"><b>UPI ID : </b><i>ravi@gpay</i></h5>
+                      <p class="card-text">Scan the QR code with any <b>UPI</b> app.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 1 hr ago</small></p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+        <p align="center"><i>Once You have Paid through scanning the QR code please Waite for 1-3 minutes for the server to respond</i></p>
+        <p align="center"><i>This page will automatically redirect. please don't go back...</i></p>
+      </div>
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

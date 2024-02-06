@@ -1,0 +1,41 @@
+#ic-hov img:hover{
+    padding: 5px 5px 5px 5px;
+    border-radius:100px;
+    height: 150px; 
+    margin: 5px 1% 5px 1%; 
+    float: left; 
+    position: relative; 
+    transition:height 0.5s; 
+    -webkit-transition:height 1s; 
+}
+
+.futer{
+    background-color: rgb(230, 230, 230);
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.list-inline{
+    padding-left:0;list-style:none;
+}
+.list-inline-item{
+    display:inline-block;
+}
+.list-inline-item:not(:last-child){
+    margin-right:.5rem;
+}
+.initialism{
+    font-size:0.875em;text-transform:uppercase;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+.bdwhite{
+    background-color: rgb(230, 230, 230);
+}
